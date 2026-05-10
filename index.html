@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harshi Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#050505;
+      color:white;
+      overflow-x:hidden;
+    }
+
+   body::before{
+  content:"";
+  position:fixed;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle, rgba(255,158,207,0.16), transparent 70%);
+  top:-250px;
+  right:-150px;
+  filter:blur(40px);
+  z-index:-3;
+  animation:floatGlow1 10s ease-in-out infinite alternate;
+}
+
+    body::after{
+  content:"";
+  position:fixed;
+  width:650px;
+  height:650px;
+  background:radial-gradient(circle, rgba(255,158,207,0.10), transparent 70%);
+  bottom:-250px;
+  left:-150px;
+  filter:blur(50px);
+  z-index:-3;
+  animation:floatGlow2 14s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow1{
+  from{
+    transform:translate(0,0);
+  }
+
+  to{
+    transform:translate(-40px,40px);
+  }
+}
+
+@keyframes floatGlow2{
+  from{
+    transform:translate(0,0);
+  }
+
+  to{
+    transform:translate(50px,-30px);
+  }
+}
+    nav{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:25px 8%;
+      position:fixed;
+      top:0;
+      backdrop-filter:blur(12px);
+      background:#00000080;
+      z-index:1000;
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:700;
+    }
+
+    .logo span{
+      color:#ff9ecf;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:40px;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      font-size:15px;
+    }
+
+    nav ul li a:hover{
+      color:#ff9ecf;
+    }
+
+    .btn{
+      padding:12px 28px;
+      border-radius:40px;
+      border:1px solid #ff9ecf;
+      background:transparent;
+      color:#ff9ecf;
+      cursor:pointer;
+      transition:0.4s;
+    }
+
+    .btn:hover{
+      background:#ff9ecf;
+      color:black;
+      box-shadow:0 0 20px #ff9ecf80;
+    }
+
+    section{
+      min-height:100vh;
+      padding:120px 8%;
+    }
+
+    .hero{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+
+    .hero-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .hero-text h3{
+      color:#ff9ecf;
+      font-weight:400;
+      margin-bottom:10px;
+    }
+
+    .hero-text h1{
+      font-size:72px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-text h1 span{
+      color:#ff9ecf;
+    }
+
+    .hero-text p{
+      color:#bbbbbb;
+      line-height:1.8;
+      max-width:550px;
+      margin-bottom:30px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .primary-btn{
+      background:#ff9ecf;
+      color:black;
+      border:none;
+      padding:14px 32px;
+      border-radius:40px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.4s;
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 0 25px #ff9ecf90;
+    }
+
+    .secondary-btn{
+      padding:14px 32px;
+      border-radius:40px;
+      background:transparent;
+      border:1px solid white;
+      color:white;
+      cursor:pointer;
+      transition:0.4s;
+text-decoration:none;
+display:inline-block;
+    }
+
+    .secondary-btn:hover{
+      border-color:#ff9ecf;
+      color:#ff9ecf;
+    }
+
+    .hero-image{
+      flex:1;
+      display:flex;
+      justify-content:center;
+      min-width:300px;
+    }
+
+   .image-box{
+  width:350px;
+  height:450px;
+  border-radius:30px;
+  overflow:hidden;
+  position:relative;
+  transition:0.4s ease;
+  box-shadow:0 10px 40px rgba(255,158,207,0.15);
+}
+
+/* hover effect */
+.image-box:hover{
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 20px 60px rgba(255,158,207,0.35);
+}
+
+    .image-box img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .title{
+      font-size:45px;
+      margin-bottom:20px;
+    }
+
+    .title span{
+      color:#ff9ecf;
+    }
+
+    .about-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:50px;
+    }
+
+    .card{
+      background:#0f0f0f;
+      border:1px solid #ffffff10;
+      padding:35px;
+      border-radius:25px;
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:#ff9ecf60;
+      box-shadow:0 0 30px #ff9ecf15;
+    }
+
+    .card h2{
+      color:#ff9ecf;
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    .skills{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+      gap:25px;
+      margin-top:50px;
+    }
+
+    .skill-box{
+      background:#0f0f0f;
+      border-radius:20px;
+      padding:30px;
+      text-align:center;
+      transition:0.4s;
+      border:1px solid #ffffff10;
+    }
+
+    .skill-box:hover{
+      transform:translateY(-8px);
+      border-color:#ff9ecf60;
+      box-shadow:0 0 25px #ff9ecf20;
+    }
+
+    .skill-box h3{
+      margin-top:15px;
+    }
+.skill-box p{
+  color:#bbbbbb;
+  font-size:14px;
+  line-height:1.6;
+  margin-top:12px;
+}
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+      margin-top:50px;
+    }
+
+    .project-card{
+      background:#0f0f0f;
+      border-radius:25px;
+      overflow:hidden;
+      border:1px solid #ffffff10;
+      transition:0.4s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+      border-color:#ff9ecf60;
+      box-shadow:0 0 30px #ff9ecf15;
+    }
+
+    .project-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .project-content{
+      padding:25px;
+    }
+
+    .project-content h3{
+      margin-bottom:10px;
+    }
+
+    .project-content p{
+      color:#bbbbbb;
+      line-height:1.7;
+      margin-bottom:20px;
+    }
+
+    .tags{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .tag{
+      background:#ffffff10;
+      padding:8px 14px;
+      border-radius:30px;
+      font-size:13px;
+    }
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact h1{
+      font-size:60px;
+      margin-bottom:20px;
+    }
+
+    .contact h1 span{
+      color:#ff9ecf;
+    }
+
+    .contact p{
+      color:#bbbbbb;
+      margin-bottom:40px;
+    }
+
+    footer{
+      padding:30px;
+      text-align:center;
+      border-top:1px solid #ffffff10;
+      color:#888;
+    }
+
+    @media(max-width:900px){
+
+      .hero-text h1{
+        font-size:52px;
+      }
+
+      nav ul{
+        display:none;
+      }
+
+      .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+      }
+
+      .hero-text p{
+        margin:auto;
+        margin-bottom:30px;
+      }
+
+      .buttons{
+        justify-content:center;
+      }
+
+      .contact h1{
+        font-size:42px;
+      }
+    }
+/* POPUP BACKGROUND */
+.popup-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000000aa;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+/* CLOUD STYLE */
+.cloud{
+  background:linear-gradient(135deg,#ff9ecf,#ffd6e8);
+  padding:40px;
+  border-radius:40px;
+  box-shadow:0 0 40px #ff9ecf80;
+  text-align:center;
+  color:black;
+  min-width:280px;
+  animation:pop 0.3s ease;
+}
+
+/* ANIMATION */
+@keyframes pop{
+  from{transform:scale(0.6); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+
+.cloud h2{
+  margin-bottom:20px;
+}
+
+.cloud p{
+  margin:10px 0;
+  font-weight:500;
+}
+
+/* CLOSE BUTTON */
+.close-btn{
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  background:black;
+  color:white;
+  cursor:pointer;
+}
+.typing-text{
+  font-size:24px;
+  color:#ff9ecf;
+  margin-top:20px;
+  text-align:center;
+  min-height:40px;
+  font-weight:500;
+}
+#changing-text{
+  border-right:3px solid #ff9ecf;
+  padding-right:6px;
+  animation:blink 0.7s infinite;
+}
+
+@keyframes blink{
+  50%{
+    border-color:transparent;
+  }
+}
+.cursor-glow{
+  position:fixed;
+  width:320px;
+  height:320px;
+  background:radial-gradient(circle,
+    rgba(255,158,207,0.18) 0%,
+    rgba(255,158,207,0.10) 30%,
+    transparent 70%
+  );
+
+  border-radius:50%;
+  pointer-events:none;
+  transform:translate(-50%, -50%);
+  z-index:-2;
+  filter:blur(35px);
+}
+.sparkles{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  pointer-events:none;
+  z-index:-1;
+  overflow:hidden;
+}
+
+.sparkles::before,
+.sparkles::after{
+  content:"";
+  position:absolute;
+  width:200%;
+  height:200%;
+
+  background-image:
+
+    radial-gradient(rgba(255,255,255,0.9) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.7) 2px, transparent 2px),
+    radial-gradient(rgba(255,255,255,0.5) 1.5px, transparent 1.5px);
+
+  background-size:
+    180px 180px,
+    260px 260px,
+    320px 320px;
+
+  animation:
+    sparkleMove 120s linear infinite,
+    twinkle 6s ease-in-out infinite alternate;
+}
+
+/* FRONT LAYER */
+.sparkles::before{
+  opacity:0.40;
+  filter:blur(0.3px);
+}
+
+/* BACK LAYER */
+.sparkles::after{
+  opacity:0.18;
+  transform:scale(1.2);
+  animation-duration:180s;
+  filter:blur(1px);
+}
+
+@keyframes sparkleMove{
+  from{
+    transform:translateY(0) translateX(0);
+  }
+
+  to{
+    transform:translateY(-250px) translateX(-120px);
+  }
+}
+
+@keyframes twinkle{
+  from{
+    opacity:0.10;
+  }
+
+  to{
+    opacity:0.30;
+  }
+}
+@keyframes moveSparkles{
+  from{
+    transform:translateY(0);
+  }
+
+  to{
+    transform:translateY(-250px);
+  }
+}
+.about-story{
+  margin-top:60px;
+}
+
+.about-story p{
+  color:#cfcfcf;
+  font-size:16px;
+  line-height:1.9;
+  margin-bottom:20px;
+
+  opacity:0;
+  transform:translateY(25px);
+  transition:all 0.7s ease;
+}
+
+/* when active */
+.about-story p.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000000cc;
+  justify-content:center;
+  align-items:center;
+  z-index:3000;
+}
+
+.modal-content{
+  background:#0f0f0f;
+  padding:40px;
+  border-radius:25px;
+  width:80%;
+  max-width:600px;
+  position:relative;
+  border:1px solid #ffffff20;
+  box-shadow:0 0 40px #ff9ecf30;
+  animation:pop 0.3s ease;
+}
+
+.modal-content h2{
+  color:#ff9ecf;
+  margin-bottom:20px;
+}
+
+.modal-content p{
+  color:#cfcfcf;
+  line-height:1.8;
+  margin-bottom:15px;
+}
+
+.close{
+  position:absolute;
+  top:15px;
+  right:20px;
+  font-size:24px;
+  cursor:pointer;
+  color:white;
+}
+  </style>
+</head>
+<!-- CONTACT POPUP -->
+<div id="contactPopup" class="popup-overlay">
+
+  <div class="cloud">
+
+    <h2>Let's Connect ☁️</h2>
+
+    <p>
+  📧 Email: 
+  <a href="mailto:harshiprajapatitech@gmail.com" style="color:black; font-weight:600; text-decoration:underline;">
+    harshiprajapatitech@gmail.com
+  </a>
+</p>
+
+    <p>
+  🔗 LinkedIn: 
+  <a href="https://www.linkedin.com/in/harshiprajapati?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+     target="_blank" 
+     style="color:black; font-weight:600; text-decoration:underline;">
+     Visit My Profile
+  </a>
+</p>
+
+    <button class="close-btn" onclick="closeContact()">Close</button>
+
+  </div>
+
+</div>
+<body>
+
+<div class="cursor-glow"></div>
+<div class="sparkles"></div>
+
+  <nav>
+    <div class="logo">HP<span>.</span></div>
+
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button class="btn">Let's Talk</button>
+  </nav>
+
+  <section class="hero">
+
+    <div class="hero-text">
+      <h3>Hello, I'm</h3>
+<h1>
+  Harshi <span>Prajapati</span>
+</h1>
+<h3>Frontend Developer • Builder • Problem Solver</h3>
+
+
+<p>
+  A frontend developer focused on creating clean, interactive,
+  and product-like web experiences. I enjoy turning ideas into real digital products
+  with strong UI, smooth interactions, and startup-style thinking.
+</p>
+
+      <div class="buttons">
+        <button class="primary-btn">View My Work</button>
+        <a href="resume/Resume.pdf" download class="secondary-btn">
+  Download Resume
+</a>
+      </div>
+    </div>
+
+  <div class="hero-image">
+
+  <div>
+
+    <div class="image-box">
+     <img src="images/PHOTO.jpg" alt="">
+    </div>
+
+    <h2 class="typing-text">
+      <span id="changing-text"></span>
+    </h2>
+
+  </div>
+
+</div>
+
+  </section>
+
+  <section id="about">
+
+    <h1 class="title">A Curious Mind With A <span>Vision.</span></h1>
+
+    <div class="about-container">
+
+      <div class="card">
+        <h2>01+</h2>
+        <p>Years of learning and building web experiences.</p>
+      </div>
+
+      <div class="card">
+        <h2>10+</h2>
+        <p>Projects and concepts designed and developed.</p>
+      </div>
+
+      <div class="card">
+        <h2>100%</h2>
+        <p>Dedication towards learning and improving consistently.</p>
+      </div>
+
+    </div>
+
+
+  <div class="about-story">
+
+    <p>
+      I’m a curious builder who enjoys turning ideas into real, functional web experiences.
+      What started as simple frontend experiments has now evolved into a consistent habit of
+      designing, building, and improving interactive projects.
+    </p>
+
+    <p>
+      I’m especially interested in modern UI design, startup-style products, and how technology
+      can solve real, everyday problems in a simple and elegant way. I don’t just code to complete
+      projects — I focus on making them feel intuitive, visually clean, and meaningful.
+    </p>
+
+    <p>
+      Currently, I’m strengthening my skills in frontend development and exploring how full-stack
+      systems and real-world products are built. My long-term goal is to contribute to impactful
+      products and eventually build my own startup-level applications.
+    </p>
+
+  </div>
+
+</section>
+  </section>
+
+  <section id="skills">
+
+    <h1 class="title">Technologies I <span>Work With</span></h1>
+
+    <div class="skills">
+
+      <div class="skill-box">
+  <h3>HTML</h3>
+  <p>Semantic structure, responsive layouts and modern webpage design.</p>
+</div>
+
+     <div class="skill-box">
+  <h3>CSS</h3>
+  <p>Animations, flexbox, grid systems and beautiful modern styling.</p>
+</div>
+
+      <div class="skill-box">
+  <h3>JavaScript</h3>
+  <p>Interactive UI features, DOM manipulation and dynamic functionality.</p>
+</div>
+
+    <div class="skill-box">
+  <h3>React</h3>
+  <p>Component-based frontend development and reusable UI building.</p>
+</div>
+
+     <div class="skill-box">
+  <h3>GitHub</h3>
+  <p>Version control, project management and deployment workflows.</p>
+</div>
+
+      <div class="skill-box">
+  <h3>UI/UX</h3>
+  <p>Clean layouts, aesthetic interfaces and user-focused experiences.</p>
+</div>
+
+    </div>
+
+  </section>
+
+  <section id="projects">
+
+    <h1 class="title">Featured <span>Projects</span></h1>
+
+    <div class="projects-grid">
+
+    <div class="project-card" onclick="openModal(
+'SaaS Landing Page',
+`
+<p><b>Problem:</b> Many startups struggle with clean landing pages.</p>
+<p><b>Solution:</b> Built a modern SaaS landing page with conversion-focused UI.</p>
+<p><b>Impact:</b> Learned real-world UI structuring and startup design patterns.</p>
+`
+)">
+        <img src="projects/picture1.jpg">
+
+        <div class="project-content">
+
+          <h3>SaaS Landing Page</h3>
+
+<p>
+  <b>Problem:</b> Many small startups struggle with clean landing pages that convert users.
+</p>
+
+<p>
+  <b>Solution:</b> Designed a modern SaaS landing page with smooth UI, responsive layout,
+  and conversion-focused structure.
+</p>
+
+<p>
+  <b>Impact:</b> Improved understanding of real-world UI structure and startup design patterns.
+</p>
+         <div class="tags">
+  <div class="tag">UI Design</div>
+  <div class="tag">Responsive Layout</div>
+  <div class="tag">Frontend Thinking</div>
+</div>
+        </div>
+
+      </div>
+
+      <div class="project-card" onclick="openModal(
+'Task Management App',
+`
+<p><b>Problem:</b> Users struggle to organize daily tasks efficiently.</p>
+<p><b>Solution:</b> Built a minimal task manager with clean UX.</p>
+<p><b>Impact:</b> Improved UI structuring and state thinking.</p>
+`
+)">
+
+       <img src="projects/picture2.jpg">
+        <div class="project-content">
+
+          <h3>Task Management App</h3>
+
+         <p>
+  <b>Problem:</b> Students and individuals often struggle to organize daily tasks in a simple and distraction-free way.
+</p>
+
+<p>
+  <b>Solution:</b> Built a clean task management interface with a focus on usability, minimal design, and easy task tracking.
+</p>
+
+<p>
+  <b>Impact:</b> Helped strengthen understanding of UI structuring, state handling, and user-focused design thinking.
+</p>
+
+          <div class="tags">
+  <div class="tag">Productivity UI</div>
+  <div class="tag">Component Design</div>
+  <div class="tag">Dark Theme UX</div>
+</div>
+
+        </div>
+
+      </div>
+
+    <div class="project-card" onclick="openModal(
+'Weather Application',
+`
+<p><b>Problem:</b> Weather apps are often cluttered.</p>
+<p><b>Solution:</b> Built a simple API-based weather UI.</p>
+<p><b>Impact:</b> Learned async JS + API handling.</p>
+`
+)">
+
+       <img src="projects/picture3.jpg">
+        <div class="project-content">
+
+          <h3>Weather Application</h3>
+
+          <p>
+  <b>Problem:</b> Most weather apps are cluttered or not visually engaging, making it hard to quickly understand weather updates.
+</p>
+
+<p>
+  <b>Solution:</b> Built a clean weather application using API integration with a focus on simplicity, real-time data display, and smooth UI experience.
+</p>
+
+<p>
+  <b>Impact:</b> Improved understanding of API handling, asynchronous JavaScript, and designing data-driven user interfaces.
+</p>
+
+          <div class="tags">
+  <div class="tag">API Integration</div>
+  <div class="tag">Real-time Data</div>
+  <div class="tag">Interactive UI</div>
+</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="contact" class="contact">
+
+    <h1>Let's Build Something <span>Amazing.</span></h1>
+
+    <p>
+      Open to collaborations, internships and exciting opportunities.
+    </p>
+
+   <button class="primary-btn" onclick="openContact()">Contact Me</button>
+
+  </section>
+
+  <footer>
+    © 2026 Harshi Prajapati. All Rights Reserved.
+  </footer>
+<div id="projectModal" class="modal">
+
+  <div class="modal-content">
+
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <h2 id="modalTitle"></h2>
+
+    <div id="modalBody"></div>
+
+  </div>
+
+</div>
+<script>
+const glow = document.querySelector(".cursor-glow");
+
+let mouseX = 0;
+let mouseY = 0;
+
+let currentX = 0;
+let currentY = 0;
+
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function animateGlow(){
+
+  currentX += (mouseX - currentX) * 0.05;
+  currentY += (mouseY - currentY) * 0.05;
+
+  glow.style.left = currentX + "px";
+  glow.style.top = currentY + "px";
+
+  requestAnimationFrame(animateGlow);
+}
+
+animateGlow();
+const texts = [
+  "Aspiring Web Developer.",
+  "Creative Builder.",
+  "Startup Enthusiast.",
+  "Frontend Designer."
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+function type(){
+
+  if(count === texts.length){
+    count = 0;
+  }
+
+  currentText = texts[count];
+  letter = currentText.slice(0, ++index);
+
+  document.getElementById("changing-text").textContent = letter;
+
+  if(letter.length === currentText.length){
+
+    setTimeout(() => {
+
+      erase();
+
+    }, 1500);
+
+  } else {
+
+    setTimeout(type, 80);
+
+  }
+}
+
+function erase(){
+
+  letter = currentText.slice(0, --index);
+
+  document.getElementById("changing-text").textContent = letter;
+
+  if(letter.length === 0){
+
+    count++;
+    setTimeout(type, 300);
+
+  } else {
+
+    setTimeout(erase, 40);
+
+  }
+}
+
+type();
+  function openContact(){
+    document.getElementById("contactPopup").style.display = "flex";
+  }
+
+  function closeContact(){
+    document.getElementById("contactPopup").style.display = "none";
+  }
+const aboutParagraphs = document.querySelectorAll(".about-story p");
+
+function revealAboutStory() {
+  const section = document.querySelector(".about-story");
+  const sectionTop = section.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / 1.3;
+
+  if (sectionTop < screenPosition) {
+
+    aboutParagraphs.forEach((para, index) => {
+      setTimeout(() => {
+        para.classList.add("show");
+      }, index * 300); // stagger delay
+    });
+
+    // run only once
+    window.removeEventListener("scroll", revealAboutStory);
+  }
+}
+
+window.addEventListener("scroll", revealAboutStory);
+const modal = document.getElementById("projectModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalBody = document.getElementById("modalBody");
+
+function openModal(title, content){
+  modal.style.display = "flex";
+  modalTitle.innerText = title;
+  modalBody.innerHTML = content;
+}
+
+function closeModal(){
+  modal.style.display = "none";
+}
+
+// close when clicking outside box
+window.onclick = function(e){
+  if(e.target === modal){
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
